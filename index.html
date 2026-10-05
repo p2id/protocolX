@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocol X: a practice for setting leisure apart and using it on purpose</title>
+<meta name="description" content="Protocol X is a free practice for checking what a leisure session did for you. Time it, rate it on five scales, read your week. No app, no account, public domain.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Protocol X: a practice for setting leisure apart and using it on purpose">
+<meta property="og:description" content="Protocol X is a free practice for checking what a leisure session did for you. Time it, rate it on five scales, read your week. No app, no account, public domain.">
+<meta property="og:locale" content="en_US">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<meta name="theme-color" content="#2447e0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cline x1='18' y1='82' x2='82' y2='18' stroke='%232447e0' stroke-width='16' stroke-linecap='round'/%3E%3Cline x1='18' y1='18' x2='82' y2='82' stroke='%23a86d00' stroke-width='16' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/px.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CreativeWork", "name": "Protocol X", "inLanguage": "en", "license": "CC0-1.0", "isAccessibleForFree": true, "description": "Protocol X is a free practice for checking what a leisure session did for you. Time it, rate it on five scales, read your week. No app, no account, public domain."}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. A timer and a printed session card are enough. A spreadsheet, a notes app or a chat window also works."}}, {"@type": "Question", "name": "Is Protocol X a medical or diagnostic tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a self-observation practice. Pull is your own rating of how hard a session was to stop, not a clinical measure. If a habit is harming your health, work or relationships, speak with a qualified professional."}}, {"@type": "Question", "name": "How is the score calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Score = 0.30×VRI + 0.25×CEI + 0.15×CQI + 0.15×(10−ARI) + 0.15×(10−WII). If Pull (ARI) is 7 or more, or Spill (WII) is 6 or more, the score is capped at 3.9 and the session is labelled Harmful."}}, {"@type": "Question", "name": "What if a reading does not apply, like Give after a solo walk?", "acceptedAnswer": {"@type": "Answer", "text": "Mark Give as N/A. It drops out of the calculation and the other four weights scale up in proportion."}}, {"@type": "Question", "name": "Does it send my data anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The tools run in your browser and save to your own device only. You can export or delete everything at any time."}}, {"@type": "Question", "name": "What does it cost, and can I adapt it?", "acceptedAnswer": {"@type": "Answer", "text": "It is free and released under CC0. You may copy, change, translate and sell adaptations without asking. Credit is welcome, never required."}}, {"@type": "Question", "name": "How do I start?", "acceptedAnswer": {"@type": "Answer", "text": "Spend seven days on one rule at a time: list three activities, answer three quick questions after each session, then add one window, a daily cap and your first full card."}}]}]}</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="brand" href="index.html"><svg viewBox="0 0 100 100" aria-hidden="true"><line x1="18" y1="82" x2="82" y2="18" stroke="var(--blue)" stroke-width="16" stroke-linecap="round"/><line x1="18" y1="18" x2="82" y2="82" stroke="var(--amber)" stroke-width="16" stroke-linecap="round"/></svg>Protocol X</a>
+<nav aria-label="Main"><a href="tools/timer.html">Timer</a><a href="tools/card.html">Score card</a><a href="tools/weekmap.html">Week map</a><a href="spec.html">Spec</a><a href="ar/" hreflang="ar" lang="ar">العربية</a></nav></header>
+<main>
+<h1>Rest should leave you with more than it took.</h1>
+<p class="lede read">Protocol X is a short practice for checking what a leisure session actually did. You time it, rate it on five scales, and read the week. It works on paper.</p>
+<p><a class="btn p" href="#try">Score a session</a> <a class="btn" href="spec.html">Read the spec</a></p>
+
+<section id="try" class="panel" style="margin-top:2rem" aria-labelledby="try-h">
+<h2 id="try-h" style="margin-top:0">Score a session</h2>
+<p class="muted small">Move each slider to how the session felt afterwards. The two strokes of the X thicken with Vitality and Pull.</p>
+<div id="calc"></div>
+</section>
+
+<h2>Three tools, no account</h2>
+<div class="grid2">
+<div class="panel"><h3 style="margin-top:0"><a href="tools/timer.html">Session timer</a></h3><p class="small">Set minutes, get an alert at 80% and at the end, then rate the session straight away.</p></div>
+<div class="panel"><h3 style="margin-top:0"><a href="tools/card.html">Score card</a></h3><p class="small">Turn a session or a week into an image you can keep or share.</p></div>
+<div class="panel"><h3 style="margin-top:0"><a href="tools/weekmap.html">Week map</a></h3><p class="small">See where the week's minutes went: restoring or draining, digital or not.</p></div>
+<div class="panel"><h3 style="margin-top:0"><a href="spec.html">The spec</a></h3><p class="small">One page of rules. CC0, so you can change any of it.</p></div>
+</div>
+
+<h2>What it is</h2>
+<div class="read">
+<p>Protocol X treats leisure as something you set apart from the rest of your day, use deliberately, and keep within limits you chose. It does not rank activities by type. A podcast, a match, a walk or a feed can each restore you one day and drain you the next.</p>
+<p>So it asks about the aftermath. Did you come back with more energy? Clearer? Able to give something? Was it hard to stop? Did it spill into your work? Five answers, one score, one weekly look.</p>
+</div>
+
+<h2>One session</h2>
+<ol class="read">
+<li><strong>Set apart.</strong> Pick one activity, a window and a duration. Start a timer that alerts at 80%.</li>
+<li><strong>Use.</strong> Do it inside the window. Stop at the timer.</li>
+<li><strong>Read.</strong> Straight after, rate Pull and Spill. Four to twenty-four hours later, rate Vitality, Clarity and Give.</li>
+<li><strong>Review.</strong> Once a week, average the sessions by minutes. Change at most one rule a month.</li>
+</ol>
+
+<h2>The five readings</h2>
+<div class="tw"><table>
+<thead><tr><th>Reading</th><th>0 means</th><th>10 means</th><th>Weight</th></tr></thead>
+<tbody>
+<tr><td>VRI · Vitality</td><td>More depleted than before</td><td>Clearly restored, ready to work</td><td>0.30</td></tr>
+<tr><td>CEI · Clarity</td><td>Foggy, scattered</td><td>A new idea or clear thinking</td><td>0.25</td></tr>
+<tr><td>CQI · Give</td><td>Closed off</td><td>Wanting to share or give</td><td>0.15</td></tr>
+<tr><td>ARI · Pull</td><td>No wish to repeat it</td><td>Hard to stop</td><td>0.15, inverted</td></tr>
+<tr><td>WII · Spill</td><td>No effect on work</td><td>Work obligations cancelled</td><td>0.15, inverted</td></tr>
+</tbody></table></div>
+<code class="f2">Score = 0.30×VRI + 0.25×CEI + 0.15×CQI + 0.15×(10−ARI) + 0.15×(10−WII)</code>
+<p class="read"><strong>Safety gate.</strong> If Pull is 7 or more, or Spill is 6 or more, the score is capped at 3.9 and the session is labelled Harmful, however well it did elsewhere. Bands: 8.0–10 Enhancing, 6.0–7.9 Acceptable, 4.0–5.9 Warning, below 4.0 Harmful.</p>
+
+<h2>Questions</h2>
+<details><summary>Do I need an app?</summary><p>No. A timer and a printed session card are enough. A spreadsheet, a notes app or a chat window also works.</p></details><details><summary>Is Protocol X a medical or diagnostic tool?</summary><p>No. It is a self-observation practice. Pull is your own rating of how hard a session was to stop, not a clinical measure. If a habit is harming your health, work or relationships, speak with a qualified professional.</p></details><details><summary>How is the score calculated?</summary><p>Score = 0.30×VRI + 0.25×CEI + 0.15×CQI + 0.15×(10−ARI) + 0.15×(10−WII). If Pull (ARI) is 7 or more, or Spill (WII) is 6 or more, the score is capped at 3.9 and the session is labelled Harmful.</p></details><details><summary>What if a reading does not apply, like Give after a solo walk?</summary><p>Mark Give as N/A. It drops out of the calculation and the other four weights scale up in proportion.</p></details><details><summary>Does it send my data anywhere?</summary><p>No. The tools run in your browser and save to your own device only. You can export or delete everything at any time.</p></details><details><summary>What does it cost, and can I adapt it?</summary><p>It is free and released under CC0. You may copy, change, translate and sell adaptations without asking. Credit is welcome, never required.</p></details><details><summary>How do I start?</summary><p>Spend seven days on one rule at a time: list three activities, answer three quick questions after each session, then add one window, a daily cap and your first full card.</p></details>
+</main>
+<footer>
+<p>Protocol X is public domain under CC0 1.0. Use it, change it, translate it. Credit is welcome, never required.</p>
+<p>Protocol X is a self-observation practice. It is not medical advice and does not diagnose any condition. If a habit is harming your health, work or relationships, speak with a qualified professional.</p>
+</footer>
+</div>
+<script src="assets/px.js"></script>
+<script src="assets/home.js"></script>
+</body></html>

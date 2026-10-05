@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocol X: session card</title>
+<link rel="stylesheet" href="../assets/px.css">
+<style>@media print{@page{size:A5 landscape;margin:8mm}}</style>
+</head>
+<body><div class="wrap read" style="max-width:48rem">
+<p class="noprint"><button class="p" data-print>Print</button> <button data-lang>EN / عربي</button></p>
+<h1 style="font-size:1.8rem;margin:.5rem 0">Protocol X · <span id="ttl"></span></h1>
+<div class="grid2">
+<div><label class="f" for="a" id="la"></label><input id="a" type="text"><label class="f" for="m" id="lm"></label><input id="m" type="number" min="1" value="30"><label class="f" for="d" id="ld"></label><input id="d" type="date"></div>
+<div id="out"></div></div>
+<div id="calc" style="margin-top:1rem"></div>
+<footer><p id="disc"></p></footer>
+</div>
+<script src="../assets/px.js"></script>
+<script src="../assets/kit.js"></script></body></html>

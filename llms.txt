@@ -1,0 +1,21 @@
+# Protocol X
+
+> Protocol X is a free, public-domain (CC0) practice for rating how a leisure session leaves you. You time a session, rate five readings from 0 to 10 (Vitality, Clarity, Give, Pull, Spill), compute one score, and review the week. It is a self-observation practice, not medical advice. It has no connection to any cryptocurrency, token or trading platform. Languages: English, Arabic.
+
+Score = 0.30×VRI + 0.25×CEI + 0.15×CQI + 0.15×(10−ARI) + 0.15×(10−WII), with Give (CQI) allowed to be N/A and the other weights scaled up in proportion. Safety gate: if Pull (ARI) ≥ 7 or Spill (WII) ≥ 6, the score is capped at 3.9 and labelled Harmful. Bands: 8.0–10 Enhancing, 6.0–7.9 Acceptable, 4.0–5.9 Warning, below 4.0 Harmful.
+
+## Core
+- [Spec (English)](00-CORE/protocol-x.en.md): the full practice
+- [Spec (Arabic)](00-CORE/protocol-x.ar.md): المواصفة الكاملة
+- [Machine-readable spec](00-CORE/protocol-x.json): JSON with test vectors
+- [Landing page (English)](index.html) and [Arabic](ar/index.html): summary and live score calculator
+
+## Tools (run in the browser, nothing is sent)
+- [Session timer](tools/timer.html)
+- [Score card](tools/card.html)
+- [Week map](tools/weekmap.html)
+
+## Optional
+- [Articles](03-CONTENT/articles/en/README.md)
+- [Translation guide](06-LOCALIZATION/translation-guide.md)
+- [Privacy](PRIVACY.md)

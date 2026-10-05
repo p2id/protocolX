@@ -1,0 +1,253 @@
+name: Protocol X
+tagline: A practice for setting leisure apart, using it on purpose, and keeping it in bounds.
+edition: 2026-10
+license: CC0-1.0
+credit: Credit to 'Protocol X' is welcome, never required.
+disclaimer: Self-observation practice. Not medical advice. Does not diagnose or treat any condition.
+loop:
+- step: set_apart
+  action: Choose one activity, a window and a duration. Timer alerts at 80%.
+- step: use
+  action: Do the activity inside the window. Stop at the timer.
+- step: read
+  action: Rate the five readings, 0 to 10.
+- step: review
+  action: Once a week, average sessions weighted by minutes.
+readings:
+- code: VRI
+  name: Vitality
+  weight: 0.3
+  direction: higher_is_better
+  anchors:
+    '0': More depleted than before
+    '5': No change
+    '10': Clearly restored, ready to work
+  rate: 4-24h after
+- code: CEI
+  name: Clarity
+  weight: 0.25
+  direction: higher_is_better
+  anchors:
+    '0': Foggy, scattered
+    '5': No effect
+    '10': A new idea or clear thinking
+  rate: 4-24h after
+- code: CQI
+  name: Give
+  weight: 0.15
+  direction: higher_is_better
+  nullable: true
+  anchors:
+    '0': Isolated or closed off
+    '5': Neutral
+    '10': Wanting to share or give
+  note: 'Shared activity: how connected. Solo activity: patience, warmth or willingness to give carried
+    out. Neither fits: N/A.'
+  rate: 4-24h after
+- code: ARI
+  name: Pull
+  weight: 0.15
+  direction: lower_is_better
+  anchors:
+    '0': No wish to repeat it
+    '5': Moderate, controlled wish
+    '10': Hard to stop; keeps returning to mind
+  note: Your own rating of how hard it was to stop. Not a clinical measure.
+  rate: immediately after
+- code: WII
+  name: Spill
+  weight: 0.15
+  direction: lower_is_better
+  anchors:
+    '0': No effect on work
+    '5': Minor delay, managed
+    '10': Work obligations cancelled
+  rate: immediately after
+formula:
+  general: score = sum(weight*value) / sum(weight) over readings that apply; ARI and WII enter as (10
+    - value)
+  all_five: 0.30*VRI + 0.25*CEI + 0.15*CQI + 0.15*(10-ARI) + 0.15*(10-WII)
+  cqi_na_weights:
+    VRI: 0.353
+    CEI: 0.294
+    ARI: 0.176
+    WII: 0.176
+safety_gate:
+  condition: ARI >= 7 or WII >= 6
+  effect: score = min(score, 3.9); label = Harmful
+bands:
+- min: 8.0
+  max: 10
+  label: Enhancing
+- min: 6.0
+  max: 7.9
+  label: Acceptable
+- min: 4.0
+  max: 5.9
+  label: Warning
+- min: 0
+  max: 3.9
+  label: Harmful
+limits:
+  daily_cap_minutes: 120
+  weekly_digital_allowance: min(480, 0.5 * total weekly leisure minutes)
+  digital_free_days_per_week: 1
+  no_high_interaction_digital_before_sleep_minutes: 60
+  conflict_rule: The stricter limit applies. All numbers are user-adjustable.
+work_boundaries:
+- Do the day's minimum work before leisure.
+- Keep leisure inside the windows you set.
+- Keep the first and last hour of work free of leisure.
+- Time every session.
+decisions:
+- order: 1
+  if: ARI >= 7 or WII >= 6
+  then: Reduce (ARI 7-8) or stop (ARI >= 9)
+- order: 2
+  if: ARI >= 6 for two consecutive weeks
+  then: 7-day digital fast, then return at 25%, 50%, 100% over three weeks
+- order: 3
+  if: VRI <= 4 and CEI <= 4
+  then: 'Draining: replace the activity'
+- order: 4
+  if: VRI >= 7 and WII <= 3
+  then: 'Fuels work: keep it close to work time'
+- order: 5
+  if: CEI >= 7 and ARI <= 3
+  then: Schedule before creative work
+weekly_review:
+  formula: weekly value = sum(reading*minutes) / sum(minutes over sessions where the reading applies)
+  targets:
+    VRI: '>=6'
+    CEI: '>=6'
+    CQI: '>=5'
+    ARI: <=4
+    WII: <=3
+    score: '>=7'
+  change_limit: At most one rule per month, written down.
+optional_supports:
+- id: partner
+  default: 'off'
+  what: Share your weekly page with one person you pick. Support, not control.
+- id: pause_24h
+  default: 'off'
+  what: After Pull >= 6 or a daily-cap breach, pause that activity for a day.
+- id: gradual_swap
+  default: 'off'
+  what: Replace 25% of a draining activity each week.
+- id: twenty_twenty
+  default: 'off'
+  what: 'Technique: 20 minutes of digital leisure, then 20 minutes of focused work before more digital.'
+onboarding_days:
+- day: '1'
+  do: List three activities you already do. Timer only.
+- day: 2-3
+  do: 'After each session answer: Did it restore me? Did it affect my work? Was it hard to stop?'
+- day: 4-5
+  do: Add one window and the daily cap.
+- day: '6'
+  do: Fill one full session card.
+- day: '7'
+  do: Do your first weekly page.
+recovery:
+  unrated_session: If the delayed ratings are not given within 48 hours, mark the session incomplete and
+    leave it out of the weekly average. No placeholder score.
+  gap_of_a_week: Resume at day 4 of the seven-day start.
+session_card_fields:
+- session_id
+- activity
+- medium
+- date_time
+- planned_minutes
+- actual_minutes
+- mode
+- VRI
+- CEI
+- CQI
+- ARI
+- WII
+- score
+- label
+- closed_at
+test_vectors:
+- name: all_neutral
+  input:
+    VRI: 5
+    CEI: 5
+    CQI: 5
+    ARI: 5
+    WII: 5
+  expected:
+    raw: 5.0
+    score: 5.0
+    gate_applied: false
+    label: Warning
+- name: strong_session
+  input:
+    VRI: 8
+    CEI: 7
+    CQI: 6
+    ARI: 2
+    WII: 1
+  expected:
+    raw: 7.6
+    score: 7.6
+    gate_applied: false
+    label: Acceptable
+- name: solo_walk_cqi_na
+  input:
+    VRI: 8
+    CEI: 7
+    CQI: null
+    ARI: 1
+    WII: 0
+  expected:
+    raw: 8.235
+    score: 8.235
+    gate_applied: false
+    label: Enhancing
+- name: gate_by_pull
+  input:
+    VRI: 9
+    CEI: 9
+    CQI: 9
+    ARI: 7
+    WII: 0
+  expected:
+    raw: 8.25
+    score: 3.9
+    gate_applied: true
+    label: Harmful
+- name: gate_by_spill
+  input:
+    VRI: 8
+    CEI: 8
+    CQI: 8
+    ARI: 2
+    WII: 6
+  expected:
+    raw: 7.4
+    score: 3.9
+    gate_applied: true
+    label: Harmful
+- name: draining
+  input:
+    VRI: 2
+    CEI: 3
+    CQI: 4
+    ARI: 5
+    WII: 3
+  expected:
+    raw: 3.75
+    score: 3.75
+    gate_applied: false
+    label: Harmful
+fast_mode:
+  description: 'Three questions answered in words, no numbers: restored/neutral/drained; touched work
+    yes/no; easy/hard to stop.'
+  counts_toward:
+  - minutes
+  - limits
+  excluded_from:
+  - weekly_readings
+  - weekly_score
