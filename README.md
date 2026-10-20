@@ -2,7 +2,7 @@
 
 **Protocol X is a free practice for rating how a leisure session leaves you: five 0–10 scales, one score, one weekly review.** It runs on paper or in the browser tools included here. Public domain (CC0), Arabic and English.
 
-[Spec (English)](00-CORE/protocol-x.en.md) · [المواصفة (العربية)](00-CORE/protocol-x.ar.md) · [Machine-readable (JSON)](00-CORE/protocol-x.json) · [One-page card](01-KITS/onepage.html)
+[Spec (English)](00-CORE/protocol-x.en.md) · [المواصفة (العربية)](00-CORE/protocol-x.ar.md) · [Machine-readable (JSON)](00-CORE/protocol-x.json) · [One-page card](01-KITS/onepage.html) · [Daily and weekly leisure schedule](01-KITS/daily-and-weekly-leisure-schedule.md) · [Leisure Loop generator](docs/leisure-loop/index.html)
 
 > Protocol X is a self-observation practice. It is not medical advice and does not diagnose or treat any condition.
 >
