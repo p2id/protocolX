@@ -1,23 +1,37 @@
-# Leisure Loop — Public Leisure Idea Generator
+# Leisure schedule generator
 
-Leisure Loop is a dependency-free static web app for creating, editing, and sharing a seven-day leisure schedule.
+A dependency-free, editable static HTML tool for creating and publishing adaptable leisure schedules. The interface begins with the principle that leisure is a biological and psychological necessity supporting mood regulation, attention restoration, and mental balance.
 
-## Use
-Open `index.html` in a modern browser. No build step, server, analytics, or third-party dependencies are needed.
+## Run locally
 
-## Features
-- Generates fresh daily ideas based on energy level.
-- Real-world leisure is the default; digital leisure is optional.
-- Calculates a 20% digital ceiling and applies the lower of that ceiling and the participant's weekly maximum.
-- Editable daily activity, session type, duration, digital reason, offline alternative, and after-session review.
-- Live totals and warning when edits exceed the digital cap.
-- Exports a public Markdown schedule, excluding private constraints and reflection answers.
-- Prepares a GitHub issue draft for community review. Users must review and submit it themselves.
+Open `index.html` in a modern browser. No build step, server, analytics, external script, or account is required. Inputs remain in the browser and are not sent to a server. The tool can be copied and adapted outside this repository.
 
-## Sharing
-The static app intentionally does not contain a GitHub token and cannot silently write to the repository. Use the “Prepare GitHub contribution” button to open a prefilled proposal, review the content, and submit it. A maintainer should review proposed schedules before adding them to the canonical collection.
+## Flexible generation
 
-Suggested public schedule folder: `01-KITS/community-schedules/`.
+- Configurable schedule length, minutes, energy, generation mode, output format, variation, digital maximum, and optional 20% ceiling.
+- Modes: minimal, balanced, low-energy, high-variety, and custom.
+- Output formats: Markdown, table, list, and prompt-ready text.
+- Activity ideas are composed from editable non-branded patterns rather than a fixed activity catalogue.
+- Self-sufficiency filter: prefer activities that can start now with free/low-cost resources already available; avoid default dependence on subscriptions, pre-produced content, purchases, or specialized equipment.
+- Exactly two session types: Real-world and Digital. Real-world is the default. Every digital session requires a reason.
+- Live totals and warnings; the tool does not intentionally generate digital time beyond the effective cap.
+- Public export excludes personal constraints and private reflections.
+- “Prepare GitHub contribution” opens a reviewable draft only. A person must review and submit it.
 
-## Protocol alignment
-This tool supplements the core protocol and does not redefine core scoring, safety, privacy, or existing weekly calculations. Adapt ideas for accessibility, safety, budget, and local context. Digital leisure is not inherently bad; each digital session should have a reason.
+## Base rules and the 20% ceiling
+
+The leisure-only scope, classification, real-world default, digital reason, session evaluation, and weekly review are base rules. The optional 20% digital ceiling is an additional planning constraint, not a replacement for core protocol rules, scoring, safety gates, or existing weekly calculations. The effective digital maximum is the lowest applicable maximum.
+
+## Community publication
+
+Canonical approved schedules belong in `01-KITS/community-schedules/`. The process is **propose → maintainer review → approve → publish**. The generator never writes generated schedules into that folder automatically. See [the community folder guide](../../01-KITS/community-schedules/README.md).
+
+## Research refresh
+
+The documented quarterly process for refreshing general, open-source-derived idea patterns is [here](../../01-KITS/activity-suggestion-refresh.md). The current refresh log records the process being established, not a completed literature review.
+
+## Public hosting
+
+The repository's GitHub Pages workflow is configured to deploy this folder, but GitHub Pages must be enabled for the repository under **Settings → Pages**, with **GitHub Actions** selected as the build and deployment source. The deployment workflow's success is the authoritative check; do not claim the Pages URL is live before a successful deployment.
+
+Interim public browser preview: [Open the generator via raw.githack](https://raw.githack.com/p2id/protocolX/main/docs/leisure-loop/index.html). This third-party service serves repository HTML with a browser-usable content type and may show a first-visit confirmation; it is not affiliated with GitHub and offers no formal uptime guarantee. The first-party Pages address `https://p2id.github.io/protocolX/` is not considered live until a successful deployment is verified. A repository administrator still needs to enable Pages under Settings → Pages and select GitHub Actions. The public source at [GitHub](https://github.com/p2id/protocolX/blob/main/docs/leisure-loop/index.html) can also be downloaded and run locally.
