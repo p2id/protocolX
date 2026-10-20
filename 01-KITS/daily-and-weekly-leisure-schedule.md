@@ -56,6 +56,22 @@ The core leisure rules above govern scope, classification, participant choice, e
 
 Do not alter or reinterpret existing core score formulas, safety gates, or weekly-page calculations.
 
+## Example: a balanced, self-sufficient week
+
+This is an illustration, not a required routine. Swap, shorten, skip, or replace any activity to fit your energy, access needs, weather, and preferences. All activities can begin with ordinary resources already available.
+
+| Day | Activity | Type | Minutes | Digital reason / offline alternative |
+|---|---|---|---:|---|
+| Monday | Take an easy walk and notice a few details in the surroundings | Real-world | 20 | — |
+| Tuesday | Make a small digital drawing or write freely using an existing device | Digital | 15 | **Reason:** a low-friction creative pause indoors. **Offline alternative:** sketch or write on scrap paper. |
+| Wednesday | Sit outside or by an open window and quietly notice sounds, light, and air | Real-world | 25 | — |
+| Thursday | Do gentle, comfortable movement or stretching | Real-world | 20 | — |
+| Friday | Make a small photo collage from images already on the device | Digital | 15 | **Reason:** try a brief creative activity with materials already available. **Offline alternative:** arrange nearby objects and sketch their shapes. |
+| Saturday | Explore a familiar nearby route at a comfortable pace | Real-world | 30 | — |
+| Sunday | Spend a few unhurried minutes drawing, observing, or resting outdoors or near a window | Real-world | 25 | — |
+
+**Example totals:** 150 planned leisure minutes; 30 digital minutes; optional 20% ceiling = 30 minutes. The example is exactly at that optional ceiling. Recalculate from the actual schedule each week and still apply every stricter participant-set or core-protocol limit. If the effective maximum is below 30 minutes, reduce the digital time accordingly. Each digital session still requires its own reason.
+
 ## Editable schedule
 
 | Day/date | Window | Activity | Type (real-world/digital) | Minutes | Reason (required for digital) | Offline alternative |
