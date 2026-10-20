@@ -27,6 +27,6 @@ Proposed schedules belong in the submission process, not directly in the canonic
 
 ## Public access
 
-The static app source is available at [docs/leisure-loop/index.html](docs/leisure-loop/index.html). The intended GitHub Pages address is `https://p2id.github.io/protocolX/`, but it must not be treated as live until a successful Pages deployment is verified. Enable Pages in repository Settings → Pages and choose GitHub Actions as the source. If Pages cannot be enabled, the source file remains publicly accessible and can be run locally; a third-party HTML preview is optional and not a hosting guarantee.
+The static app source is available at [docs/leisure-loop/index.html](docs/leisure-loop/index.html). **Interim public browser preview:** [Open the generator via raw.githack](https://raw.githack.com/p2id/protocolX/main/docs/leisure-loop/index.html). This third-party service serves HTML with a browser-usable content type and may show a first-visit confirmation; it is not affiliated with GitHub and offers no formal uptime guarantee. The intended first-party address is `https://p2id.github.io/protocolX/`; the repository's Pages workflow is ready, but GitHub Pages must be enabled in repository Settings → Pages with GitHub Actions selected. Do not claim the first-party Pages address is live until a successful deployment is verified. The source can also be downloaded and run locally.
 
 The prompt and tool are free to copy, edit, translate, and adapt. Keep personal constraints and reflections private unless deliberately anonymized for sharing.
