@@ -18,6 +18,18 @@ Use public, general, preferably open-access sources such as:
 
 Search broadly across populations and contexts. Do not infer that one activity benefits everyone or treat correlational evidence as proof of causation. Do not scrape private communities. Do not use branded entertainment catalogues, commercial promotions, or paywalled material as the generator's default dependency.
 
+## Public starting points for refreshes
+
+These are starting points for future reviewers, not endorsements of a single activity or proof that all leisure has one effect:
+
+- Heckel et al. (2024), *A systematic review of the wellbeing benefits of being active through leisure and fitness centres*, open access: https://doi.org/10.1080/02614367.2023.2243654
+- Coventry et al. (2021), *Nature-based outdoor activities for mental and physical health: Systematic review and meta-analysis*, open access: https://pmc.ncbi.nlm.nih.gov/articles/8498096/
+- Ohly et al. (2016), *Attention Restoration Theory: A systematic review of the attention restoration potential of exposure to natural environments*: https://pubmed.ncbi.nlm.nih.gov/27668460/
+- Open-access search for leisure and wellbeing literature: https://pmc.ncbi.nlm.nih.gov/?term=leisure+wellbeing+review
+- Open-access search for attention restoration literature: https://pubmed.ncbi.nlm.nih.gov/?term=attention+restoration+systematic+review
+
+These sources cover particular contexts and populations, not a universal prescription. The attention-restoration review itself notes limitations and uncertainty; preserve those qualifications when turning evidence into general activity patterns.
+
 ## Refresh workflow
 
 1. **Collect:** record the public source title, author or issuing body, publication date, stable URL, access date, and a short description of the general finding. Do not copy long passages.
@@ -30,7 +42,7 @@ Search broadly across populations and contexts. Do not infer that one activity b
 
 ## Refresh log
 
-- Initial process established: 2026-10-20. The generator uses compositional prompts and user-editable interests; this entry documents the refresh method and does not claim a new literature review has been completed.
+- 2026-10-20: process and initial open-source starting points documented. This is not a completed systematic literature review and does not claim the generator has been comprehensively updated based on these papers.
 
 ## Research integrity
 
