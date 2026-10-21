@@ -1,118 +1,76 @@
-# Prompt and template: daily and weekly leisure schedule
+# Daily and weekly leisure schedule: prompt and template
 
-> **Leisure is a biological and psychological necessity, not a luxury.** Its primary functions include mood regulation, attention restoration, and mental balance. Plan leisure to support those functions—not to optimize productivity, complete obligations, or prove achievement.
+**Leisure is a biological and psychological necessity.** It can support mood regulation, attention restoration, and mental balance.
 
-This portable prompt/template can be used in ChatGPT, another text assistant, on paper, or adapted for a community. The repository is only a publication location; it does not define or own the method. Reuse, edit, translate, and republish freely under the repository's CC0 license.
+This standalone, editable template works on paper or in any text editor or text-based assistant; no app, account, or repository is required. It organizes timing and review, not activity content. The participant chooses an activity label or leaves it blank.
 
-## Copy-and-use prompt
+## Schedule-organizing instructions
 
-Act as a flexible leisure-schedule facilitator. Create a practical daily or weekly schedule using the rules and inputs below. Ask only for missing details that materially affect the plan. Do not assume the repository's example activities are mandatory.
+Organize participant-chosen leisure into a daily or weekly plan. Exclude work, study, chores, errands, and obligations disguised as leisure. Do not invent, prescribe, rank, recommend, or prefer activities.
 
-**Purpose and method**
-1. Treat leisure as a biological and psychological necessity supporting mood regulation, attention restoration, and mental balance. Use those functions to shape activity choice, duration, pacing, and review.
-2. Schedule leisure only: no work, study, chores, errands, productivity tasks, or other obligations disguised as leisure.
-3. Classify every session as exactly one of:
-   - **Real-world:** the physical world is the main medium.
-   - **Digital:** a screen, device, or internet is the main medium.
-   If an experience changes medium, split it into separately timed sessions and classify each one.
-4. Default to real-world leisure. Digital leisure is not inherently bad; use it when it fits the person's intention and circumstances.
-5. Prefer self-sufficient activities that can start immediately with free or low-cost resources already available. Do not assume subscriptions, pre-produced content, special equipment, purchases, or another person's participation.
-6. Adapt for energy, accessibility, safety, location, space, culture, weather, time, and personal preference. Offer genuine variety; do not repeat one pattern merely to fill a schedule.
-7. Every digital session must state a short, honest reason. Apply the chosen weekly digital maximum strictly.
-8. After each session ask: **What did it take? What did it give? Would I repeat it (yes, no, or with conditions)?**
-9. In the weekly review ask: **Which real-world session improved mood most? Was the digital cap exceeded? What real-world alternative could replace or complement a digital session?**
-10. Keep personal constraints and reflections private by default. For a public version, exclude names, precise locations, contact details, sensitive details, and private reflections.
-11. Make the output reusable and editable. Do not mention brands, named services, or named entertainment entities in generated activity content.
+1. Use exactly two session types with these exact lowercase labels: real-world and digital. Real-world uses the physical world as its main medium; digital uses a screen, device, or internet. Split a session if its medium changes.
+2. Real-world is the default. Digital leisure is not inherently harmful; the cap is a neutral planning constraint, not a judgment.
+3. Organize session count, timing, and duration only. Keep chosen sessions self-sufficient and feasible with resources already available where practical; do not assume spending, subscriptions, special equipment, or another person's participation.
+4. Adapt the structure to time, energy, access, safety, and context without publishing sensitive details.
+5. Every digital session needs a short reason and an offline/real-world alternative.
+6. Every session includes exactly these three post-session prompts: “What did it take?”, “What did it give?”, and “Would you repeat it?” Answer the last with yes / no / with conditions. Do not add another post-session prompt.
+7. Include a weekly review of mood/restoration, cap compliance, and possible offline/real-world alternatives.
+8. Keep personal constraints and reflection answers private. Public copies exclude identifying or sensitive details and private reflections.
 
-**Inputs to customize**
-- Schedule length: [one day / seven days / custom number of days]
-- Leisure time available: [minutes per day or per session]
-- Current energy: [low / medium / high / varies]
-- Desired planning mode: [minimal / balanced / low-energy / high-variety / custom]
-- Output format: [table / list / Markdown / prompt-ready text]
-- Accessibility, safety, space, weather, budget, and other constraints: [optional; keep private]
-- Real-world interests or activities to include/avoid: [optional]
-- Weekly digital maximum: [minutes, or a stricter personal percentage]
-- Optional 20% planning ceiling: [on / off; default on]
-- Preferred variation: [familiar / mixed / exploratory]
-- Any activity to exclude: [optional]
+## Digital-cap calculation
 
-**Generation requirements**
-- Build each suggestion from the person's constraints and preferences; use the chosen mode to change session count, duration distribution, variety, and structure—not just activity names.
-- Each activity must be leisure, self-sufficient, feasible now or with resources already available, and adaptable. If a suggestion requires unavailable resources, replace it.
-- Show total planned leisure minutes, digital minutes, the applicable digital cap, and remaining allowance.
-- Before publication, check every digital reason and check that digital minutes do not exceed the cap. If a schedule exceeds the cap, revise it rather than presenting the excess as compliant.
-- Include an offline alternative for each digital session.
-- Leave blank review fields for actual experiences; do not invent outcomes.
+- Total planned leisure minutes (T) = minutes for all sessions.
+- Planned digital minutes (D) = minutes for digital sessions.
+- Digital share = planned digital minutes ÷ total planned leisure minutes × 100 = D ÷ T × 100.
+- 20% ceiling = floor(T × 0.20) minutes.
+- Applicable cap = the lowest of the 20% ceiling, the core protocol's 480-minute weekly maximum, and any lower participant/configured/core-protocol limit.
+- Confirm D ≤ the applicable cap and digital share ≤ 20%. Revise any over-cap plan before presenting it.
+- If T is zero, the share is undefined; do not plan digital minutes until T is positive.
 
-## Base rules first; optional planning cap second
+The 20% ceiling is mandatory for schedules made with this template and does not alter core scoring or safety rules.
 
-The core leisure rules above govern scope, classification, participant choice, evaluation, safety, privacy, and any applicable core-protocol scoring or limits. **The 20% digital ceiling is an additional planning constraint, not a replacement for those core rules or calculations.** When enabled, calculate:
-
-- Planned leisure total = sum of all planned leisure-session minutes.
-- 20% planning ceiling = floor(planned leisure total × 0.20).
-- Effective digital maximum = the lowest of the participant's stated weekly digital maximum, the optional 20% ceiling (if enabled), and any stricter applicable core-protocol limit.
-- Digital minutes must be at or below the effective maximum. Every digital session still needs a reason, even when the cap is not reached.
-
-Do not alter or reinterpret existing core score formulas, safety gates, or weekly-page calculations.
-
-## Example: a balanced, self-sufficient week
-
-This is an illustration, not a required routine. Swap, shorten, skip, or replace any activity to fit your energy, access needs, weather, and preferences. All activities can begin with ordinary resources already available.
-
-| Day | Activity | Type | Minutes | Digital reason / offline alternative |
-|---|---|---|---:|---|
-| Monday | Take an easy walk and notice a few details in the surroundings | Real-world | 20 | — |
-| Tuesday | Make a small digital drawing or write freely using an existing device | Digital | 15 | **Reason:** a low-friction creative pause indoors. **Offline alternative:** sketch or write on scrap paper. |
-| Wednesday | Sit outside or by an open window and quietly notice sounds, light, and air | Real-world | 25 | — |
-| Thursday | Do gentle, comfortable movement or stretching | Real-world | 20 | — |
-| Friday | Make a small photo collage from images already on the device | Digital | 15 | **Reason:** try a brief creative activity with materials already available. **Offline alternative:** arrange nearby objects and sketch their shapes. |
-| Saturday | Explore a familiar nearby route at a comfortable pace | Real-world | 30 | — |
-| Sunday | Spend a few unhurried minutes drawing, observing, or resting outdoors or near a window | Real-world | 25 | — |
-
-**Example totals:** 150 planned leisure minutes; 30 digital minutes; optional 20% ceiling = 30 minutes. The example is exactly at that optional ceiling. Recalculate from the actual schedule each week and still apply every stricter participant-set or core-protocol limit. If the effective maximum is below 30 minutes, reduce the digital time accordingly. Each digital session still requires its own reason.
+**Arithmetic illustration only:** if T = 120 and D = 10 minutes, then 10 ÷ 120 × 100 = 8.3%. The 20% ceiling is floor(120 × 0.20) = 24 minutes. With no lower limit, 10 ≤ 24 and 8.3% ≤ 20%, so the plan is within the cap.
 
 ## Editable schedule
 
-| Day/date | Window | Activity | Type (real-world/digital) | Minutes | Reason (required for digital) | Offline alternative |
+Use participant-chosen labels or leave the activity field blank.
+
+| Day/session | Window | Activity label (optional) | Type (real-world/digital) | Minutes | Digital reason | Offline/real-world alternative |
 |---|---|---|---|---:|---|---|
-| 1 | | | | | | |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
-| 7 | | | | | | |
+| 1 | | | real-world | | | |
+| 2 | | | real-world | | | |
+| 3 | | | real-world | | | |
+| 4 | | | real-world | | | |
+| 5 | | | real-world | | | |
+| 6 | | | real-world | | | |
+| 7 | | | real-world | | | |
 
-Add or remove rows to match the requested schedule length. A session's duration should fit the available time and current energy; an empty slot or rest is acceptable.
+## Post-session evaluation
 
-## After each session
-
-- **What did it take?** (for example: fatigue, distraction, boredom, friction): ____________________
-- **What did it give?** (for example: energy, calm, clarity, connection, enjoyment, mental balance): ____________________
-- **Would I repeat it?** Yes / No / With conditions
-- If conditional, what would I change? ____________________
+| Day/session | What did it take? | What did it give? | Would you repeat it? (yes / no / with conditions) |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+| 6 | | | |
+| 7 | | | |
 
 ## Weekly review
 
-- Which real-world session improved my mood most, if any? ____________________
-- Planned leisure minutes: ______ · Actual leisure minutes: ______
-- Planned digital minutes: ______ · Actual digital minutes: ______
-- Was the effective digital maximum exceeded? Yes / No
-- What real-world alternative could replace or complement a digital session next week? ____________________
-- What took energy? ____________________
-- What gave energy, clarity, calm, or balance? ____________________
-- One small adjustment for next week: ____________________
+- What helped mood or restoration? ____________________
+- Which real-world session, if any, helped mood most? ____________________
+- Planned total minutes (T): ______ · Planned digital minutes (D): ______
+- Digital share = D ÷ T × 100 = ______ ÷ ______ × 100 = ______%
+- 20% ceiling = floor(T × 0.20) = ______ minutes · Applicable cap: ______ minutes
+- Was the planned share ≤ 20% and D within the applicable cap? Yes / No
+- Actual total minutes: ______ · Actual digital minutes: ______
+- Was the cap met in practice? Yes / No / With conditions
+- What could replace digital time with an offline/real-world option, if useful? ____________________
 
-## Community publication: propose → review → approve → publish
+## Propose → Review → Approve → Publish
 
-1. **Propose:** prepare an editable, anonymized Markdown file and submit it through a GitHub issue or pull request targeting `01-KITS/community-schedules/`.
-2. **Review:** a maintainer checks leisure-only scope, self-sufficiency, accessibility, privacy, classification, digital reasons, cap arithmetic, and consistency with the core rules.
-3. **Approve:** the maintainer explicitly approves the proposed change. Submission is not approval.
-4. **Publish:** only after approval is the file merged into the canonical community folder.
+Prepare an anonymized, editable Markdown draft. Review scope, participant choice, exact types, digital reasons and alternatives, cap arithmetic, the three prompts, weekly review, privacy, portability, and standalone usability. An authorized human maintainer must explicitly approve the exact proposed version. A PR, passing checks, or an automation run is not approval. Publish only after verified approval; never auto-publish.
 
-Never auto-publish generated schedules to the canonical collection. Personal notes and session reflections should remain local unless the participant deliberately removes private details and chooses to share.
-
-## Portability
-
-This template is intentionally independent of any app, repository structure, activity catalogue, or named entity. Copy it into any text editor or assistant and change its inputs, rules, or output format as needed. The repository is simply one public place to publish and update versions.
+Keep private notes local and share only deliberately anonymized content.
