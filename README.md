@@ -8,7 +8,7 @@ The prompt/template works in any text editor or text-based assistant, on paper, 
 - [Optional interactive schedule organizer](docs/leisure-loop/index.html)
 - [Generator documentation and hosting status](docs/leisure-loop/README.md)
 - [Canonical community schedule folder and review process](01-KITS/community-schedules/README.md)
-- [Activity suggestion research-refresh process](01-KITS/activity-suggestion-refresh.md)
+- [Legacy activity-suggestion scope note](01-KITS/activity-suggestion-refresh.md)
 
 ## Schedule rules
 
