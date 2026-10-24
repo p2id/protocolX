@@ -28,7 +28,7 @@ Calculate the cap separately for each seven-day week. For a one-day plan, calcul
 - Applicable cap = the lowest of the 20% ceiling and any lower participant/configured limit or stricter applicable protocol limit.
 - Show T, D, the formula with substituted numbers, the percentage, and the applicable cap. Confirm D is within the applicable cap and the digital share is no more than 20%.
 - If a plan exceeds the cap, revise it before presenting it. Count every planned session consistently; do not omit sessions from T or D.
-- If T is zero, the share is undefined; do not plan digital minutes until T is positive.
+- If T is zero, the share is undefined and that week cannot pass validation; add planned leisure minutes before use. Do not plan digital minutes until T is positive.
 
 **Arithmetic illustration only:** if T = 120 and D = 10 minutes, then 10 ÷ 120 × 100 = 8.3%. The 20% ceiling is floor(120 × 0.20) = 24 minutes. If no stricter limit applies, the applicable cap is 24 minutes; 10 ≤ 24 and 8.3% ≤ 20%, so the plan is within the cap.
 

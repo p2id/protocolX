@@ -1,6 +1,6 @@
 # Weekly page
 
-Print or copy this standalone page. Leisure is a biological and psychological necessity. Organize participant-chosen leisure and review restoration; do not prescribe or rank activities. Leave activity labels blank if none have been chosen.
+Print or copy this standalone page. Use one copy per seven-day week; for a multi-week plan, calculate each week separately. Leisure is a biological and psychological necessity. Organize participant-chosen leisure and review restoration; do not prescribe or rank activities. Leave activity labels blank if none have been chosen.
 
 ## Plan
 
@@ -27,7 +27,7 @@ Add or remove rows as needed. Count every session consistently.
 - Applicable cap = the lowest of the 20% ceiling, the core protocol's 480-minute weekly maximum, and any lower participant/configured/core-protocol limit = ______ minutes
 - D ≤ applicable cap? Yes / No
 - Digital share ≤ 20%? Yes / No
-- If T is zero, the share is undefined; do not schedule digital minutes until T is positive.
+- If T is zero, the share is undefined and the week cannot pass validation; add planned leisure minutes or shorten the plan before use. Do not schedule digital minutes until T is positive.
 - If either check fails, revise the plan before use or sharing. The cap is a neutral planning constraint, not a judgment about digital leisure.
 
 ## Post-session evaluation
@@ -55,27 +55,12 @@ Complete one row per session after it occurs. Use exactly these three prompts: �
 - What could replace digital time with an offline/real-world option, if useful? ____________________
 - What else helped restoration or could be adjusted next week? ____________________
 
-## Core-protocol readings
+## Propose → Review → Approve → Publish
 
-Keep the existing core readings and score interpretation unchanged.
-
-| Session/day | Minutes | VRI | CEI | CQI | ARI | WII | Score |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| | | | | | | | |
-| | | | | | | | |
-| | | | | | | | |
-| | | | | | | | |
-| | | | | | | | |
-| | | | | | | | |
-| | | | | | | | |
-
-Weekly value of a reading = Σ(reading × minutes) ÷ Σ(minutes). For Give, leave out sessions marked N/A.
-
-Targets: VRI ≥ 6 · CEI ≥ 6 · CQI ≥ 5 · ARI ≤ 4 · WII ≤ 3 · Score ≥ 7.
-
-The one rule I will change this month (or none): ____________________
-
-What I noticed: ____________________
+1. **Propose:** prepare an anonymized, editable Markdown draft through the configured repository proposal workflow.
+2. **Review:** check leisure-only scope, exact session types, the real-world default, digital reasons and offline alternatives, visible weekly arithmetic, the three exact post-session prompts, weekly review, privacy, portability, and standalone use.
+3. **Approve:** an authorized human maintainer must explicitly approve the exact proposed version. An open PR or successful validation is not approval.
+4. **Publish:** merge and place the schedule in the canonical community collection only after verifying approval for that exact version. Never publish an unapproved draft.
 
 ## Privacy and portability
 
