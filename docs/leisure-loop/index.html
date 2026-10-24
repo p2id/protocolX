@@ -1,113 +1,17 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leisure schedule generator</title>
-<meta name="description" content="A free, editable, portable leisure schedule generator. Leisure supports mood regulation, attention restoration, and mental balance.">
-<style>
-:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f4f6f3;color:#202b26;font:16px/1.55 system-ui,sans-serif}header{background:#243f35;color:#fff;padding:24px max(16px,calc((100% - 1040px)/2))}main,footer{max-width:1040px;margin:auto;padding:14px}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:.1em 0}.panel{background:white;border:1px solid #d7ded8;border-radius:12px;padding:16px;margin:13px 0}.grid,.sessions,.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}label{display:block;font-weight:650;margin:7px 0 4px}input,select,textarea{width:100%;padding:9px;border:1px solid #aebbb1;border-radius:7px;font:inherit;background:#fff;color:#202b26}textarea{min-height:66px}button{font:inherit;font-weight:650;padding:10px 13px;margin:8px 5px 0 0;border:0;border-radius:7px;background:#315b48;color:#fff;cursor:pointer}.secondary{background:#e5ebe6;color:#202b26}.session,.stat{border:1px solid #d7ded8;border-radius:9px;padding:11px}.stat strong{display:block;font-size:1.4rem}.notice{padding:10px;border-radius:7px;background:#e7f2e8}.warn{background:#fff0d8}.muted{font-size:.9rem;color:#53635a}.hidden{display:none}a{color:inherit}footer{font-size:.9rem;color:#53635a}.lead{font-size:1.08rem;max-width:75ch}.smallcaps{font-size:.83rem;text-transform:uppercase;letter-spacing:.04em}
-</style>
-</head>
-<body>
-<header>
-<p class="smallcaps">Portable planning tool</p>
-<h1>Leisure schedule generator</h1>
-<p class="lead"><strong>Leisure is a biological and psychological necessity, not a luxury.</strong> Its primary functions include mood regulation, attention restoration, and mental balance. This generator plans leisure for those functions—not for productivity.</p>
-</header>
-<main>
-<section class="panel"><h2>1. Configure the schedule</h2>
-<div class="grid">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leisure schedule organizer</title><meta name="description" content="Portable, editable leisure schedule organizer.">
+<style>*{box-sizing:border-box}body{margin:0;font:16px/1.45 system-ui;color:#202b26;background:#f4f6f3}header{background:#243f35;color:white;padding:20px}main,footer{max-width:980px;margin:auto;padding:12px}.panel{background:white;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}.grid,.sessions,.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}label{display:block;margin:6px 0 3px;font-weight:600}input,select,textarea{width:100%;padding:7px;font:inherit}textarea{min-height:50px}button{padding:8px;margin:6px 4px 0 0}.session,.stat{border:1px solid #ddd;padding:8px}.stat strong{display:block;font-size:1.2rem}.notice{padding:8px;background:#e7f2e8}.warn{background:#fff0d8}.muted,footer{font-size:.9rem;color:#53635a}</style></head><body>
+<header><p>Portable planning tool</p><h1>Leisure schedule organizer</h1><p><strong>Leisure is a biological and psychological necessity.</strong> It can support mood, attention, and mental balance. This tool organizes schedules, not activity content.</p></header><main>
+<section class="panel"><h2>1. Configure</h2><div class="grid">
 <div><label for="daysCount">Schedule length (days)</label><input id="daysCount" type="number" min="1" max="31" value="7"></div>
-<div><label for="mins">Available leisure minutes per day</label><input id="mins" type="number" min="0" max="600" step="5" value="45"></div>
-<div><label for="energy">Current energy</label><select id="energy"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option><option value="varies">Varies across days</option></select></div>
-<div><label for="mode">Generation mode</label><select id="mode"><option value="minimal">Minimal — fewer, simpler sessions</option><option value="balanced" selected>Balanced — steady variety</option><option value="low">Low-energy — gentle, low-friction choices</option><option value="variety">High-variety — change setting, sense, and activity shape</option><option value="custom">Custom — follow your parameters</option></select></div>
-<div><label for="format">Output format</label><select id="format"><option value="markdown">Markdown (portable)</option><option value="table">Table</option><option value="list">List</option><option value="prompt">Prompt-ready text</option></select></div>
-<div><label for="variation">Variation</label><select id="variation"><option value="familiar">Mostly familiar</option><option value="mixed" selected>Mix familiar and new</option><option value="explore">Exploratory</option></select></div>
-<div><label for="maxD">Participant's weekly digital maximum (minutes)</label><input id="maxD" type="number" min="0" max="10000" step="5" value="45"></div>
-<div><label for="use20">Apply optional 20% digital planning ceiling?</label><select id="use20"><option value="yes" selected>Yes — additional constraint</option><option value="no">No — use other applicable limits</option></select></div>
-<div><label for="digitalCount">Digital sessions to include (maximum)</label><input id="digitalCount" type="number" min="0" max="31" value="1"></div>
-<div><label for="likes">Interests or activities to include (optional)</label><textarea id="likes" placeholder="Separate ideas with commas or new lines"></textarea></div>
-<div><label for="avoid">Activities to avoid (optional)</label><textarea id="avoid" placeholder="Separate terms with commas"></textarea></div>
-<div><label for="limits">Access, safety, space, weather, budget, or other constraints</label><textarea id="limits" placeholder="For example: indoors, quiet, alone, limited space"></textarea><p class="muted">Avoid names, exact locations, or sensitive details. This field is not included in public output.</p></div>
-</div>
-<button id="generate">Generate schedule</button><button id="one" class="secondary">Generate one idea</button><span id="status" role="status" aria-live="polite"></span>
-</section>
-<section class="panel"><h2>2. Base rules and digital limits</h2>
-<p>The base rules come first: leisure only; exactly two session types; real-world leisure is the default; every digital session has a reason; and each session is reviewed by what it took, what it gave, and whether to repeat. The optional 20% ceiling is an extra planning constraint—not a replacement for the core rules, any applicable core-protocol limits, scoring, or calculations.</p>
-<div class="stats"><div class="stat">Planned leisure<strong id="total">315 min</strong></div><div class="stat">Optional 20% ceiling<strong id="ceiling">63 min</strong></div><div class="stat">Effective digital maximum<strong id="cap">45 min</strong></div><div class="stat">Planned digital<strong id="digital">15 min</strong><span id="pct" class="muted"></span></div></div>
-<p id="warning" class="notice" aria-live="polite">Every digital session needs a reason.</p>
-</section>
-<section class="panel"><h2>3. Edit every session</h2><p class="muted">The generated schedule is a draft. Edit it freely. Real-world means the physical world is the main medium; digital means a screen, device, or internet is the main medium. If an experience changes medium, split it into separately timed sessions. Mixed is not a third type.</p><div id="sessions" class="sessions"></div></section>
-<section class="panel"><h2>4. After-session evaluation</h2><p>Keep these reflections private by default; they are never included in the public export.</p><div class="grid"><div><label for="took">What did it take? (fatigue, distraction, boredom, friction)</label><textarea id="took"></textarea></div><div><label for="gave">What did it give? (energy, calm, clarity, enjoyment, mental balance)</label><textarea id="gave"></textarea></div><div><label for="repeat">Would you repeat it?</label><select id="repeat"><option>Not reviewed yet</option><option>Yes</option><option>No</option><option>With conditions</option></select></div><div><label for="condition">If conditional, what would change?</label><textarea id="condition"></textarea></div></div></section>
-<section class="panel"><h2>5. Weekly review</h2><div class="grid"><div><label for="mood">Which real-world session improved mood most?</label><textarea id="mood"></textarea></div><div><label for="exceeded">Was the digital cap exceeded?</label><select id="exceeded"><option>Not reviewed yet</option><option>No</option><option>Yes</option></select></div><div><label for="alternative">What real-world alternative could replace or complement a digital session?</label><textarea id="alternative"></textarea></div></div></section>
-<section class="panel"><h2>6. Copy, download, and propose</h2><p>Public exports include the schedule and rules, but exclude personal constraints, private reviews, and reflection fields. Review the result before sharing.</p><button id="copy">Copy public output</button><button id="download" class="secondary">Download text file</button><button id="github" class="secondary">Prepare GitHub contribution</button><p class="muted">Community flow: <strong>propose → maintainer review → approve → publish</strong>. A proposal is not automatically added to the canonical collection. Repository for updates: <a href="https://github.com/p2id/protocolX" target="_blank" rel="noopener">github.com/p2id/protocolX</a>.</p></section>
-<section class="panel"><h2>Method and portability</h2><p>Suggestions are composed from configurable activity shapes, settings, sensory attention, playful movement, observation, and making with materials already available—not selected from a fixed branded catalogue. Prefer activities that can start now, are free or low-cost, and do not depend on subscriptions, pre-produced content, purchases, specialized equipment, or another person's participation. Skip anything unsuitable for your access needs or context.</p><p class="muted">The activity-building rules are portable and editable. The tool works locally in your browser; it does not save or send your inputs to a server. To propose a public schedule, only the exported schedule is placed in a draft for you to review and submit.</p></section>
-</main>
-<footer>Reuse and adapt. Rest, unstructured time, and an empty slot are valid. Missed sessions are information, not failure. Digital leisure is not inherently bad.</footer>
-<script>
-(()=> {
-const $=id=>document.getElementById(id), clean=s=>String(s||'').replace(/[<>]/g,'').trim();
-let plan=[];
-const nouns=['a nearby object','a window or view','sounds in the environment','a texture or surface','a plant or natural detail','a familiar room','a few objects already at hand','a safe patch of open space','a memory or imagined scene','the rhythm of ordinary movement'];
-const actions={
-low:['Rest comfortably and notice','Gently explore','Observe without needing to change','Arrange or notice','Let attention settle on'],
-medium:['Explore with curiosity','Make a small pattern from','Notice new details in','Play with a simple variation of','Use imagination to reinterpret'],
-high:['Invent a playful challenge around','Explore a different way to experience','Create several variations of','Combine observation and playful movement with','Build a tiny self-set experiment from']
-};
-const forms=['for a few minutes, without a performance goal','and notice three details','in a way that feels comfortable','then pause and notice your mood','using only what is already available','with a quiet or active version of your choice'];
-const lowEnergy=/\b(low|tired|fatigue|quiet|alone|solitary|indoors|inside|home|limited space|no equipment|free|cheap|low-cost)\b/i;
-function total(){return plan.reduce((a,x)=>a+x.minutes,0)}
-function digital(){return plan.reduce((a,x)=>a+(x.type==='Digital'?x.minutes:0),0)}
-function cap(){let c=+$('maxD').value||0; if($('use20').value==='yes')c=Math.min(c,Math.floor(total()*.2)); return Math.max(0,c)}
-function choose(a){return a[Math.floor(Math.random()*a.length)]}
-function makeIdea(i,mode){
- let energy=$('energy').value, constraints=$('limits').value.toLowerCase(), lo=mode==='low'||energy==='low'||lowEnergy.test(constraints), hi=mode==='variety'||energy==='high'||$('variation').value==='explore';
- let pool=lo?actions.low:hi?actions.high:actions.medium;
- let idea=choose(pool)+' '+choose(nouns)+' '+choose(forms)+'.';
- if(/indoor|inside|home|limited space|can't go out|cannot go out/.test(constraints))idea=idea.replace(/safe patch of open space/g,'familiar indoor space');
- if(/quiet|alone|solitary|no company/.test(constraints))idea+=' Keep it solitary and quiet if preferred.';
- return idea;
-}
-function makePlan(){
- let n=Math.max(1,Math.min(31,parseInt($('daysCount').value)||7)), mins=Math.max(0,Math.min(600,parseInt($('mins').value)||0)), mode=$('mode').value;
- let count=mode==='minimal'?Math.min(n,3):mode==='low'?n:mode==='variety'?n:mode==='custom'?n:n;
- let interests=$('likes').value.split(/[,;\n]+/).map(clean).filter(Boolean), avoid=$('avoid').value.toLowerCase().split(/[,;\n]+/).map(clean).filter(Boolean);
- plan=Array.from({length:count},(_,i)=>{let activity=(interests.length&&Math.random()<.55)?'Explore a personal interest using only resources already available, without needing a named service, purchase, or special equipment.':makeIdea(i,mode); let attempts=0;while(avoid.some(a=>activity.toLowerCase().includes(a.toLowerCase()))&&attempts++<8)activity=makeIdea(i,mode);let duration=mins;if(mode==='minimal')duration=Math.max(0,Math.round(mins*.75/5)*5);if(mode==='low')duration=Math.max(0,Math.round(mins*.6/5)*5);if(mode==='variety'&&i%2===1)duration=Math.max(0,Math.round(mins*.5/5)*5);return {day:'Day '+(i+1),activity,type:'Real-world',minutes:duration,reason:'',alternative:'Try a self-sufficient real-world activity or rest.',took:'',gave:'',repeat:'Not reviewed yet'}});
- let requested=Math.min(count,Math.max(0,parseInt($('digitalCount').value)||0));
- // Allocate digital sessions only when a cap exists; split them as separate sessions with a required reason.
- for(let i=0;i<requested;i++){let max=Math.min(15,Math.floor(mins/3/5)*5);if(max<5)continue;plan[i].type='Digital';plan[i].minutes=max;plan[i].reason='I chose a brief digital session for a specific interest or connection; I will stop if it does not support my mood or attention.';plan[i].alternative='Explore the same curiosity offline, observe something nearby, or rest.'}
- // Ensure the generated plan never breaches its applicable cap.
- let c=cap(), used=0;plan.forEach(s=>{if(s.type==='Digital'){let allowed=Math.max(0,Math.min(s.minutes,c-used));s.minutes=Math.floor(allowed/5)*5;used+=s.minutes}});
- plan=plan.filter(s=>s.type!=='Digital'||s.minutes>0);
- render();$('status').textContent=' Draft generated. Edit it, then check totals and digital reasons before sharing.';
-}
-function render(){
- const root=$('sessions');root.innerHTML='';
- plan.forEach((s,i)=>{const el=document.createElement('article');el.className='session';
- el.innerHTML='<h3>'+s.day+'</h3><label>Activity</label><textarea data-i="'+i+'" data-k="activity"></textarea><div class="grid"><div><label>Type</label><select data-i="'+i+'" data-k="type"><option>Real-world</option><option>Digital</option></select></div><div><label>Minutes</label><input type="number" min="0" max="600" step="5" data-i="'+i+'" data-k="minutes"></div></div><label>Reason (required for digital)</label><textarea data-i="'+i+'" data-k="reason"></textarea><label>Real-world alternative</label><textarea data-i="'+i+'" data-k="alternative"></textarea><h4>After-session evaluation</h4><label>What did it take?</label><textarea data-i="'+i+'" data-k="took" placeholder="Fatigue, distraction, boredom, friction…"></textarea><label>What did it give?</label><textarea data-i="'+i+'" data-k="gave" placeholder="Energy, calm, clarity, enjoyment, balance…"></textarea><label>Would you repeat it?</label><select data-i="'+i+'" data-k="repeat"><option>Not reviewed yet</option><option>Yes</option><option>No</option><option>With conditions</option></select><label>If conditional, what would change?</label><textarea data-i="'+i+'" data-k="condition"></textarea><button class="secondary" data-remove="'+i+'">Remove session</button>';
- el.querySelectorAll('[data-k]').forEach(inp=>{let k=inp.dataset.k;inp.value=s[k]??'';inp.addEventListener('input',()=>{let idx=+inp.dataset.i;plan[idx][k]=k==='minutes'?Math.max(0,+inp.value||0):inp.value;if(k==='type'&&inp.value==='Digital'&&!plan[idx].reason)plan[idx].reason='State why this digital session is chosen.';stats()})});
- el.querySelector('[data-remove]').onclick=()=>{plan.splice(i,1);render()};root.appendChild(el)});
- stats();
-}
-function stats(){let t=total(),d=digital(),c=cap(),missing=plan.some(s=>s.type==='Digital'&&!clean(s.reason));$('total').textContent=t+' min';$('ceiling').textContent=Math.floor(t*.2)+' min';$('cap').textContent=c+' min';$('digital').textContent=d+' min';$('pct').textContent=(t?(d/t*100).toFixed(1):'0')+'% of plan';$('warning').className='notice'+(d>c||missing?' warn':'');$('warning').textContent=d>c?'Digital time exceeds the effective cap by '+(d-c)+' minutes. Revise before sharing.':missing?'Add a short reason to every digital session before sharing.': 'Digital time is within the effective cap; every digital session has a reason.'}
-function output(){
- let fmt=$('format').value, lines=[];
- const capLine='Effective digital maximum: '+cap()+' minutes; planned digital: '+digital()+' minutes; planned leisure: '+total()+' minutes.';
- if(fmt==='prompt')lines=['Create or adapt this leisure-only schedule for another person. Leisure supports mood regulation, attention restoration, and mental balance. Keep the activities self-sufficient and low-cost; default to real-world leisure; use exactly two types (Real-world or Digital); require a reason for each digital session; do not exceed the effective weekly digital maximum.','',capLine,''];
- else lines=['# Public leisure schedule','', '> Leisure is a biological and psychological necessity, not a luxury. Plan for mood regulation, attention restoration, and mental balance.','',capLine,'','Base rules: leisure only; real-world is the default; exactly two types (Real-world and Digital); every digital session needs a reason; evaluate what it took, what it gave, and whether to repeat. The optional 20% ceiling is an additional planning constraint, not a replacement for core rules or limits.',''];
- if(fmt==='table'){lines=['# Public leisure schedule','','> Leisure supports mood regulation, attention restoration, and mental balance.','',capLine,'','| Day | Activity | Type | Minutes | Digital reason | Offline alternative |','|---|---|---|---:|---|---|'];plan.forEach(s=>lines.push('| '+s.day+' | '+clean(s.activity).replace(/\|/g,'/')+' | '+s.type+' | '+s.minutes+' | '+(s.type==='Digital'?clean(s.reason).replace(/\|/g,'/'): '—')+' | '+clean(s.alternative).replace(/\|/g,'/')+' |'))}
- else plan.forEach(s=>{if(fmt==='list')lines.push(s.day+': '+clean(s.activity)+' ('+s.type+', '+s.minutes+' min)'+(s.type==='Digital'?' — reason: '+clean(s.reason):'')+'; offline alternative: '+clean(s.alternative));else {lines.push('## '+s.day,'- Activity: '+clean(s.activity),'- Type: '+s.type,'- Minutes: '+s.minutes);if(s.type==='Digital')lines.push('- Reason: '+clean(s.reason));lines.push('- Offline alternative: '+clean(s.alternative),'')}})
- lines.push('', '## After-session review (complete privately after the session)','- What did it take?','- What did it give?','- Would I repeat it: yes / no / with conditions?','','## Weekly review','- Which real-world session improved mood most?','- Was the digital cap exceeded?','- What real-world alternative could replace or complement a digital session?','','Community process: propose → maintainer review → approve → publish. This is a proposal, not automatic publication.');
- return lines.join('\n')
-}
-function download(){const blob=new Blob([output()],{type:'text/markdown;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='public-leisure-schedule.md';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-$('generate').onclick=makePlan;
-$('one').onclick=()=>{$('status').textContent='Idea: '+makeIdea(0,$('mode').value)+' Adapt or reject it to suit your needs.'};
-$('mins').oninput=stats;$('maxD').oninput=stats;$('use20').onchange=stats;
-$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(output());$('status').textContent='Public output copied.'}catch(e){download();$('status').textContent='Clipboard unavailable; downloaded the output instead.'}};
-$('download').onclick=download;
-$('github').onclick=()=>{const body='Please review this proposed community leisure schedule. Do not add it to the canonical collection until a maintainer has reviewed and approved it.\n\n'+output().slice(0,5000)+'\n\nSuggested folder: 01-KITS/community-schedules/\n\n- [ ] Leisure-only scope and necessity framing checked\n- [ ] Self-sufficiency, accessibility, and low-cost assumptions checked\n- [ ] Digital reasons and cap arithmetic checked\n- [ ] Private information excluded\n- [ ] Maintainer review and explicit approval completed before publication';const url='https://github.com/p2id/protocolX/issues/new?title='+encodeURIComponent('Community leisure schedule proposal')+'&body='+encodeURIComponent(body);window.open(url,'_blank','noopener');$('status').textContent='Proposal draft opened. Review and submit it yourself; it will not publish automatically.'};
-makePlan();
-})();
-</script>
-</body></html>
+<div><label for="mins">Available minutes per day</label><input id="mins" type="number" min="0" max="600" step="5" value="45"></div>
+<div><label for="mode">Structure</label><select id="mode"><option value="minimal">Minimal</option><option value="balanced" selected>Balanced</option><option value="low">Low-energy</option><option value="variety">Vary durations</option><option value="custom">Custom</option></select></div>
+<div><label for="format">Output format</label><select id="format"><option value="markdown">Markdown</option><option value="table">Table</option><option value="list">List</option><option value="prompt">Prompt-ready</option></select></div>
+<div><label for="maxD">Participant/configured weekly digital maximum (minutes)</label><input id="maxD" type="number" min="0" max="10000" value="45"></div>
+<div><label for="digitalCount">Digital sessions to try to include</label><input id="digitalCount" type="number" min="0" max="31" value="1"></div>
+</div><button id="generate">Generate schedule</button><button id="add">Add blank session</button><span id="status" role="status" aria-live="polite"></span></section>
+<section class="panel"><h2>2. Digital-cap check</h2><p>Exactly two types: <strong>real-world</strong> and <strong>digital</strong>. Real-world is the default. The 20% maximum is mandatory; any lower limit applies. This cap is neutral, not a judgment.</p><div class="stats"><div class="stat">Total planned<strong id="total">0 min</strong></div><div class="stat">Combined 20% ceiling (display only)<strong id="ceiling">0 min</strong></div><div class="stat">Sum of weekly caps (display only)<strong id="cap">0 min</strong></div><div class="stat">Planned digital<strong id="digital">0 min</strong><span id="pct" class="muted"></span></div></div><p class="muted">Summary values combine weeks for orientation only; the per-week calculations below determine compliance.</p><p id="math" class="notice" aria-live="polite"></p><p id="warning" class="notice" aria-live="polite"></p></section>
+<section class="panel"><h2>3. Edit sessions</h2><p class="muted">Activity labels are participant-chosen or blank. No activity is invented, prescribed, ranked, or preferred. Split a session if its medium changes.</p><div id="sessions" class="sessions"></div></section>
+<section class="panel"><h2>4. Weekly review</h2><p>Keep notes private; they are excluded from public export.</p><div class="grid"><div><label for="mood">What helped mood or restoration?</label><textarea id="mood"></textarea></div><div><label for="actualCapMet">Was the applicable cap met in practice?</label><select id="actualCapMet"><option value="">Not reviewed</option><option>yes</option><option>no</option><option>with conditions</option></select></div><div><label for="alternative">What could replace digital time with an offline/real-world option, if useful?</label><textarea id="alternative"></textarea></div></div></section>
+<section class="panel"><h2>5. Export or propose</h2><p>Exports include the schedule and blank prompts, not reflection answers. Review labels and reasons before sharing.</p><button id="copy">Copy public output</button><button id="download">Download Markdown</button><button id="github">Prepare contribution</button><p class="muted">Propose → Review → Approve → Publish. A maintainer must approve the exact version before publication.</p></section>
+</main><footer>Runs locally without an account or server. Keep private reflections local. The Markdown template works without this tool or repository. Digital leisure is not inherently harmful.</footer><script src="app.js"></script><script src="export.js"></script></body></html>
