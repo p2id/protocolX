@@ -69,7 +69,6 @@ Complete this for every session. These are the only post-session evaluation prom
 ## Weekly review
 
 - What helped mood or restoration? ____________________
-- Which real-world session, if any, helped mood most? ____________________
 - Actual total leisure minutes: ______ · Actual digital minutes: ______
 - Actual digital share (if actual total > 0): ______ ÷ ______ × 100 = ______%
 - Was the applicable cap met in practice? Yes / No / With conditions

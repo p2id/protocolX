@@ -47,7 +47,6 @@ Complete one row per session after it occurs. Use exactly these three prompts: �
 ## Weekly review
 
 - What helped mood or restoration? ____________________
-- Which real-world session, if any, helped mood most? ____________________
 - Planned total minutes: ______ · Planned digital minutes: ______ · Planned share: ______%
 - Applicable cap: ______ minutes · Was the plan within the cap? Yes / No
 - Actual total leisure minutes: ______ · Actual digital minutes: ______
