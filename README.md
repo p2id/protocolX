@@ -25,7 +25,7 @@ The prompt/template works in any text editor or text-based assistant, on paper, 
 
 ## Publication and community review
 
-The required path is **Propose → Review → Approve → Publish**. The interactive tool prepares a draft only; an authorized human maintainer must explicitly approve the exact proposed version before merge and publication in 01-KITS/community-schedules/.
+The required path is **Propose → Review → Approve → Publish**. The interactive tool downloads a local Markdown PR draft only; a person must submit it in a GitHub pull request. An authorized human maintainer must explicitly approve the exact proposed version before merge and publication in 01-KITS/community-schedules/.
 
 ## Public access
 

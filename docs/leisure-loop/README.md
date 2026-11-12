@@ -23,7 +23,7 @@ Planned digital minutes ÷ total planned leisure minutes × 100 = digital share.
 
 ## Community publication
 
-Canonical approved schedules belong in 01-KITS/community-schedules/. The process is **Propose → Review → Approve → Publish**. The contribution button opens a draft only; it does not write to the canonical folder. An authorized human maintainer must explicitly approve the exact proposed version before merge. See [the community folder guide](../../01-KITS/community-schedules/README.md).
+Canonical approved schedules belong in 01-KITS/community-schedules/. The process is **Propose → Review → Approve → Publish**. The contribution button downloads a standalone Markdown draft for submission through a pull request; it does not create an issue or PR, write to the repository, or publish to the canonical folder. An authorized human maintainer must explicitly approve the exact proposed version before merge. See [the community folder guide](../../01-KITS/community-schedules/README.md).
 
 ## Public hosting
 

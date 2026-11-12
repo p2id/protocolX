@@ -6,7 +6,7 @@ This folder is the **canonical collection of maintainer-approved public schedule
 
 **Propose → Review → Approve → Publish**
 
-1. **Propose:** submit an anonymized, editable Markdown schedule through a pull request or the documented proposal process. A generator's contribution button creates a draft only; a person must review and submit it.
+1. **Propose:** prepare an anonymized, editable Markdown schedule and submit it in a GitHub pull request. The organizer downloads a local Markdown draft only; a person must create and submit the PR.
 2. **Review:** check leisure-only scope and the necessity framing; exactly two session types with exact lowercase labels real-world and digital; real-world default; participant choice without prescribed or ranked activity content; self-sufficiency; accessibility and safety; a short reason and offline/real-world alternative for every digital session; visible digital-cap arithmetic; the three exact post-session prompts; weekly mood/restoration review; privacy; portability; standalone usability; and consistency with applicable core rules.
 3. **Approve:** an authorized human maintainer must explicitly approve the exact proposed version. Community feedback, successful validation, an open pull request, or an automation run is not approval.
 4. **Publish:** only after verifying approval for the exact version may it be merged into this folder. No tool or workflow may auto-publish generated schedules here.

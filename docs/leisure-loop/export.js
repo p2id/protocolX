@@ -19,8 +19,8 @@ function output(){
  lines.push('','## Privacy and portability','Keep identifying details and private reflection answers out of public copies. This export excludes entered reflections. The template is editable and usable without an app or repository.','','## Publication lifecycle','Propose → Review → Approve → Publish. An authorized human maintainer must approve the exact version before publication.');
  return lines.join('\n');
 }
-function download(){if(!L.valid())return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([output()],{type:'text/markdown;charset=utf-8'}));a.download='leisure-schedule-proposal.md';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function download(name='leisure-schedule-proposal.md'){if(!L.valid())return false;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([output()],{type:'text/markdown;charset=utf-8'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);return true}
 $('copy').onclick=async()=>{if(!L.valid())return;try{await navigator.clipboard.writeText(output());$('status').textContent='Public output copied.'}catch(e){download()}};
-$('download').onclick=download;
-$('github').onclick=()=>{if(!L.valid())return;const body='Review this proposed leisure schedule. Do not publish without explicit approval of the exact version.\n\n'+output()+'\n\n- [ ] Only real-world and digital types used\n- [ ] Real-world default and no prescribed activity content checked\n- [ ] Digital reasons and offline alternatives checked\n- [ ] Separate weekly cap arithmetic and compliance checked\n- [ ] Three session prompts and weekly review included\n- [ ] Private reflections excluded\n- [ ] Authorized maintainer approval recorded before publication';window.open('https://github.com/p2id/protocolX/issues/new?title='+encodeURIComponent('Leisure schedule proposal')+'&body='+encodeURIComponent(body),'_blank','noopener');$('status').textContent='Proposal draft opened for review; nothing was published.'};
+$('download').onclick=()=>download();
+$('github').onclick=()=>{if(!download('leisure-schedule-pr-draft.md'))return;$('status').textContent='Markdown PR draft downloaded. Submit it in a GitHub pull request for human review. No issue, commit, or publication was created.'};
 })();
