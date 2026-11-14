@@ -4,7 +4,7 @@ A dependency-free, editable static HTML tool for organizing participant-chosen l
 
 ## Run locally
 
-Open index.html in a modern browser. No build step, server, analytics, remote script, or account is required. Inputs stay in the browser. No input is sent anywhere unless the person deliberately opens a contribution draft. The tool can be copied and adapted outside this repository.
+Open index.html in a modern browser. No build step, server, analytics, remote script, or account is required. Inputs stay in the browser; no input is sent to a server. The contribution action only downloads a local Markdown draft. Any later submission or sharing is a separate, deliberate action. The tool can be copied and adapted outside this repository.
 
 ## Schedule organization
 

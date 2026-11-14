@@ -19,13 +19,13 @@ Organize participant-chosen leisure into a daily or weekly plan. Exclude work, s
 
 ## Weekly digital-cap calculation
 
-Calculate the cap separately for each seven-day week. For a one-day plan, calculate against that day's planned leisure total and apply the same percentage ceiling; for a plan spanning multiple weeks, show a separate calculation for each week. Never combine multiple weeks into one calculation to hide an over-cap week.
+Calculate the cap separately for each consecutive seven-day week. A plan shorter than seven days is a partial first week: calculate using all planned leisure sessions in that period and label it as a partial week. For plans spanning multiple weeks, show a separate calculation for each seven-day week and any final partial week. Never combine multiple weeks into one calculation to hide an over-cap week.
 
 - Total planned leisure minutes (T) = minutes for **all** planned leisure sessions in that week, both types.
 - Planned digital minutes (D) = minutes for **all** digital sessions in that same week.
 - Digital share = planned digital minutes ÷ total planned leisure minutes × 100 = D ÷ T × 100.
 - 20% ceiling = floor(T × 0.20) minutes.
-- Applicable cap = the lowest of the 20% ceiling and any lower participant/configured limit or stricter applicable protocol limit.
+- Applicable cap = the lowest of the 20% ceiling, the core protocol's 480-minute weekly digital maximum, and any lower participant/configured limit. The core protocol's 50% allowance must never raise this stricter 20% ceiling.
 - Show T, D, the formula with substituted numbers, the percentage, and the applicable cap. Confirm D is within the applicable cap and the digital share is no more than 20%.
 - If a plan exceeds the cap, revise it before presenting it. Count every planned session consistently; do not omit sessions from T or D.
 - If T is zero, the share is undefined and that week cannot pass validation; add planned leisure minutes before use. Do not plan digital minutes until T is positive.

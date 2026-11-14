@@ -2,6 +2,10 @@
 
 Thank you. Protocol X is public domain, so contributions are made under CC0 too.
 
+## Leisure schedule proposals
+
+For leisure schedule templates, organizer behavior, weekly digital-cap calculations, review, and publication guidance, submit a focused pull request directly; a preliminary issue is not required. Keep proposal and supporting files in `01-KITS/` and `docs/leisure-loop/`. Only an authorized human maintainer-approved exact version may be merged into `01-KITS/community-schedules/`. Follow **Propose → Review → Approve → Publish**. This narrow exception does not change the issue-first process for unrelated Protocol X changes.
+
 **Rules and the formula.** Open an issue first. Say what you changed, for how long, and what happened. Changes to weights, thresholds or the safety gate need a clear reason, because they change what every card means.
 
 **Wording and examples.** Pull requests welcome. Keep sentences short and plain, and do not add claims of research or results.
